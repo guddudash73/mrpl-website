@@ -15,12 +15,21 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ? process.env.NEXT_PUBLIC_SITE_URL
-  : "https://meadowlarkrealcon.com";
+const getMetadataBase = (): URL => {
+  try {
+    const rawUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://meadowlarkrealcon.com";
+    const formattedUrl =
+      rawUrl.startsWith("http://") || rawUrl.startsWith("https://")
+        ? rawUrl
+        : `https://${rawUrl}`;
+    return new URL(formattedUrl);
+  } catch {
+    return new URL("https://meadowlarkrealcon.com");
+  }
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: getMetadataBase(),
   title: {
     default:
       "Meadowlark Realcon (MRPL) | Premium Plots & Architectural Construction in Bhubaneswar",
