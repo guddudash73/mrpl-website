@@ -1,5 +1,5 @@
 export type PlotStatus = 'Available' | 'Reserved' | 'Sold';
-export type PlotType = 'Residential' | 'Commercial' | 'Investment';
+export type PlotType = 'Residential' | 'Commercial' | 'Investment' | 'Plotting & Duplex';
 
 export interface Plot {
   id: string;
@@ -7,6 +7,8 @@ export interface Plot {
   location: string;
   address: string;
   sizeSqFt: number;
+  availableSizes?: string;
+  customSizeNote?: string;
   pricePerSqFt: number;
   totalPrice: number;
   plotType: PlotType;
@@ -14,7 +16,7 @@ export interface Plot {
   image: string;
   description: string;
   features: string[];
-  dimensions: string;
+  dimensions?: string;
   facing: 'North' | 'South' | 'East' | 'West' | 'North-East' | 'South-East';
   isFeatured?: boolean;
 }
@@ -24,25 +26,14 @@ export interface Project {
   title: string;
   subtitle: string;
   location: string;
-  category: 'Residential' | 'Commercial' | 'Duplex' | 'Master-Planned';
+  category: 'Residential' | 'Commercial' | 'Duplex' | 'Master-Planned' | 'Standard Duplex' | 'Premium Duplex';
   status: 'Ongoing' | 'Completed' | 'Upcoming';
   image: string;
   description: string;
-  totalUnits: number;
+  totalUnits?: number;
   completionYear: string;
   features: string[];
   isSignature?: boolean;
-}
-
-export interface ConstructionPackage {
-  id: string;
-  name: string;
-  ratePerSqFt: number;
-  badge?: string;
-  description: string;
-  specifications: string[];
-  idealFor: string;
-  warrantyYears: number;
 }
 
 export interface FilterState {

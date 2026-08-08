@@ -32,11 +32,11 @@ export const Modal: React.FC<ModalProps> = memo(({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/60 backdrop-blur-sm animate-fade-in">
       <div
-        className="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-border-light relative overflow-hidden max-h-[90vh] overflow-y-auto"
+        className="bg-card-bg rounded-3xl max-w-lg w-full p-5 sm:p-7 shadow-2xl border border-border-light relative overflow-hidden max-h-[92vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex justify-between items-center pb-4 border-b border-border-light mb-6">
-          <h3 className="text-xl font-bold text-primary font-display">{title}</h3>
+        <div className="flex justify-between items-center pb-3 border-b border-border-light mb-4">
+          <h3 className="text-lg sm:text-xl font-bold text-primary font-display">{title}</h3>
           <button
             onClick={onClose}
             className="w-8 h-8 rounded-full bg-surface-alt flex items-center justify-center text-text-muted hover:text-primary transition-colors cursor-pointer"

@@ -17,13 +17,13 @@ export const Input: React.FC<InputProps> = memo(({
   return (
     <div className="flex flex-col space-y-2 w-full">
       {label && (
-        <label htmlFor={inputId} className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+        <label htmlFor={inputId} className="text-[11px] font-semibold text-text-muted uppercase tracking-wider">
           {label}
         </label>
       )}
       <input
         id={inputId}
-        className={`w-full px-4 py-3 bg-surface border border-border-light rounded-lg text-primary text-sm font-medium focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors ${className}`}
+        className={`w-full px-3.5 py-2.5 bg-surface border border-border-light rounded-lg text-primary text-xs font-medium focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors ${className}`}
         {...props}
       />
       {error && <span className="text-xs text-red-500 font-medium">{error}</span>}

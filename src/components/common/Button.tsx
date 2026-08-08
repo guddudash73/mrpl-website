@@ -20,9 +20,9 @@ export const Button: React.FC<ButtonProps> = memo(({
   const baseStyle = 'inline-flex items-center justify-center font-bold tracking-wider transition-all duration-300 rounded-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed';
 
   const variants = {
-    primary: 'bg-primary text-white hover:bg-primary-light shadow-md shadow-primary/10',
+    primary: 'bg-primary text-white dark:text-surface hover:bg-primary-light shadow-md shadow-primary/10',
     secondary: 'bg-secondary text-white hover:bg-secondary-light shadow-lg shadow-secondary/20',
-    outline: 'bg-white border border-border-light text-primary hover:bg-surface-alt hover:border-primary',
+    outline: 'bg-card-bg border border-border-light text-primary hover:bg-surface-alt hover:border-primary',
     ghost: 'bg-transparent text-primary hover:bg-surface-alt hover:text-secondary',
   };
 
